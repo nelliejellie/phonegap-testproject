@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    
+    <title>Dog calculator</title>
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+    
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    
+    <style>
+        #footer{
+            position: absolute;
+            bottom: 0vh;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div data-role="page" id="page">
+        <div data-role="header">
+            <h1>dog calculator</h1>
+        </div><!--header -->
+        <div data-role="main" class="ui-content">
+            <input type="number" id="num"><br>
+            <button onclick="calc()" >calculate</button><br>
+            <button onclick="location.href='index.html#page2'" >Move to next page</button><br>
+            <br>
+        </div><!--main -->
+        <div data-role='footer' id="footer">
+            <h2>&copy; phonegap</h2>
+        </div><!--footer -->
+    </div><!--page -->
+    
+    
+     <div data-role="page" id="page2">
+        <div data-role="header">
+            <h1>Collapsible Set</h1>
+        </div><!--header-->
+        <div data-role="main" class="ui-content">
+            <br>
+            <div data-role="collapsible-set">
+                <div data-role="collapsible" data-collapsed='true'>
+                    <h2>use it well</h2>
+                    <p> i just want you to use it well</p>
+                </div><!--collapsible -->
+                <div data-role="collapsible" data-collapsed='false'>
+                    <h2>use it very well</h2>
+                    <p> i just want you to use it well</p>
+                </div><!--collapsible -->
+            </div><!--collapsible set -->
+            <button onclick="location.href='index.html#page3'" >go to next page</button><br>
+        </div><!--main -->
+        <div data-role='footer' id="footer">
+            <h2>&copy; phonegap</h2>
+        </div><!--footer -->
+    </div><!--page2 -->
+    
+     <div data-role="page" id="page3">
+        <div data-role="header">
+            <h1>Control Groups</h1>
+        </div><!--header-->
+        <div data-role="main" class="ui-content">
+            <fieldset data-role='controlgroup' data-mini='true'> <!--if you want the view to be minimised used data-mini -->
+                <legend>Programming Languages:</legend><br>
+                <input  type="checkbox" name="python" id='python'>
+                <label for="python">Python</label><br>
+                <input  type="checkbox" name="javascript" id='javascript'>
+                <label for="javascript">Javascript</label><br>
+                <input  type="checkbox" name="java" id='java'>
+                <label for="java">JAVA</label><br>
+            </fieldset><!--controlgroup -->
+            <h2>Flip Switch</h2>
+            <label for="flip">FlipSwitch</label>
+            <input type="checkbox" id="flip" data-role='flipswitch'>
+            <button onclick="location.href='index.html#page4'" >go back</button><br>
+        </div><!--main -->
+        <div data-role='footer' id="footer">
+            <h2>&copy; phonegap</h2>
+        </div><!--footer -->
+    </div><!--page3 -->
+    
+     <div data-role="page" id="page4">
+        <div data-role="header">
+            <h1>ListView</h1>
+        </div><!--header-->
+        <div data-role="main" class="ui-content">
+            <ul data-role='listview'>
+                <li><a href="#"> wizkid </a></li>
+                <li><a href="#"> davido </a></li>
+                <li data-role='list-divider'> females </li><!--divides the list -->
+                <li><a href=""> tiwa Savage </a></li>
+                <li><a href=""> Simi </a></li>
+            </ul><!--listview -->
+            
+            <button onclick="location.href='index.html#page'" >go back</button><br>
+        </div><!--main -->
+        <div data-role='footer' id="footer">
+            <h2>&copy; phonegap</h2>
+        </div><!--footer -->
+    </div><!--page4 -->
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+        
+        function calc(){
+            var numb = document.getElementById('num').value;
+            numb * 7;
+            alert(numb)
+        };
+    </script>
+</body>
+
+</html>
